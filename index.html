@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="images/spotify-logo.png" alt="Spotify" style="height: 40px;">
+            </div>
+            <div class="library-section">
+                <div class="lib-header">
+                    <div class="lib-title">
+                        <i class="fa-solid fa-book"></i>
+                        <span>Your Library</span>
+                    </div>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div class="create-playlist">
+                    <div class="cp-card">
+                        <h4>Create your first playlist</h4>
+                        <p>It's easy, we'll help you</p>
+                        <button class="small-btn">Create playlist</button>
+                    </div>
+                    <div class="cp-card">
+                        <h4>Let's find some podcasts to follow</h4>
+                        <p>We'll keep you updated on new episodes</p>
+                        <button class="small-btn">Browse podcasts</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-footer">
+                    <div class="legal-links">
+                        <a href="#">Legal</a>
+                        <a href="#">Safety & Privacy Center</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">About Ads</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                    <button class="lang-btn">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-nav">
+                <div class="nav-controls">
+                    <button class="circle-btn">
+                        <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            fill="currentColor">
+                            <path
+                                d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="circle-btn">
+                        <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            fill="currentColor">
+                            <path
+                                d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="search-bar-container">
+                    <div class="search-box">
+                        <svg role="img" height="24" width="24" aria-hidden="true" class="search-icon"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+                            </path>
+                        </svg>
+                        <input type="text" placeholder="What do you want to play?">
+                        <svg role="img" height="24" width="24" aria-hidden="true" class="browse-icon"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M3 5.418C3 4.086 4.086 3 5.418 3h4.929c.666 0 1.27.34 1.62.91l.732 1.168h5.883C19.914 5.078 21 6.164 21 7.496v9.086C21 17.914 19.914 19 18.582 19H5.418C4.086 19 3 17.914 3 16.582V5.418zm2.418-1.049a.418.418 0 0 0-.418.418v11.795a.418.418 0 0 0 .418.418h13.164a.418.418 0 0 0 .418-.418V7.496a.418.418 0 0 0-.418-.418h-6.25l-.946-1.503a.415.415 0 0 0-.353-.204H5.418z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="auth-buttons">
+                    <span class="premium-link">Premium</span>
+                    <span class="support-link">Support</span>
+                    <span class="download-link">Download</span>
+                    <div class="divider"></div>
+                    <button class="install-app"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                    <button class="signup-btn">Sign up</button>
+                    <button class="login-btn">Log in</button>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2>Trending songs</h2>
+                        <a href="#" class="show-all">Show all</a>
+                    </div>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="img-holder">
+                                <img src="images/album1.jpeg" alt="Song">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Gehra Hua</h3>
+                            <p>Shashwat Sachdev, Arijit Singh, Irshad Kamil</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-holder">
+                                <img src="images/album2.jpeg" alt="Song">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Seet Lehar</h3>
+                            <p>Filmy, Riyaazi</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-holder">
+                                <img src="images/album3.jpeg" alt="Song">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>KALYANI</h3>
+                            <p>ARIN, KDS, FIFTY4, RONN</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-holder">
+                                <img src="images/album4.jpeg" alt="Song">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Hopeless</h3>
+                            <p>Amanraj Gill, Prem Lata</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-holder">
+                                <img src="images/album5.jpeg" alt="Song">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Oorum Blood</h3>
+                            <p>Sai Abhyankkar, Paal Dabba</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2>Popular artists</h2>
+                        <a href="#" class="show-all">Show all</a>
+                    </div>
+                    <div class="cards-container">
+                        <div class="card artist-card">
+                            <div class="img-holder">
+                                <img src="images/artist-2.jpeg" alt="Artist">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Pritam</h3>
+                            <p>Artist</p>
+                        </div>
+                        <div class="card artist-card">
+                            <div class="img-holder">
+                                <img src="images/artist-1.jpeg" alt="Artist">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>A.R. Rahman</h3>
+                            <p>Artist</p>
+                        </div>
+                        <div class="card artist-card">
+                            <div class="img-holder">
+                                <img src="images/artist-3.jpeg" alt="Artist">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Arijit Singh</h3>
+                            <p>Artist</p>
+                        </div>
+                        <div class="card artist-card">
+                            <div class="img-holder">
+                                <img src="images/artist-4.jpeg" alt="Artist">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Sachin-Jigar</h3>
+                            <p>Artist</p>
+                        </div>
+                        <div class="card artist-card">
+                            <div class="img-holder">
+                                <img src="images/artist-5.jpeg" alt="Artist">
+                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <h3>Ed Sheeran</h3>
+                            <p>Artist</p>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="main-footer">
+                    <div class="footer-links">
+                        <div class="fl-col">
+                            <h4>Company</h4>
+                            <a href="#">About</a>
+                            <a href="#">Jobs</a>
+                            <a href="#">For the Record</a>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <div class="icon-circle"><i class="fa-brands fa-instagram"></i></div>
+                        <div class="icon-circle"><i class="fa-brands fa-twitter"></i></div>
+                        <div class="icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+    <div class="preview-banner">
+        <div class="text-group">
+            <p class="preview-title">Preview of Spotify</p>
+            <p class="preview-subtitle">Sign up to get unlimited songs and podcasts with occasional ads. No credit card
+                needed.</p>
+        </div>
+        <button class="banner-btn">Sign up free</button>
+    </div>
+</body>
+
+</html>
