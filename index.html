@@ -4,59 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify</title>
+    <title>Spotify - Web Player: Music for everyone</title>
+    <meta name="description"
+        content="A Spotify web player clone built with plain HTML and CSS. Browse trending songs, popular artists and personalised mixes.">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="icon" href="images/spotify-logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="container">
-        <nav class="sidebar">
+        <nav class="sidebar" aria-label="Main">
             <div class="logo">
-                <img src="images/spotify-logo.png" alt="Spotify" style="height: 40px;">
+                <img src="images/spotify-logo.png" alt="Spotify home" style="height: 40px;">
             </div>
             <div class="library-section">
                 <div class="lib-header">
                     <div class="lib-title">
-                        <i class="fa-solid fa-book"></i>
+                        <i class="fa-solid fa-book" aria-hidden="true"></i>
                         <span>Your Library</span>
                     </div>
-                    <i class="fa-solid fa-plus"></i>
+                    <button class="icon-btn" type="button" aria-label="Create playlist or folder">
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="create-playlist">
                     <div class="cp-card">
                         <h4>Create your first playlist</h4>
                         <p>It's easy, we'll help you</p>
-                        <button class="small-btn">Create playlist</button>
+                        <button class="small-btn" type="button">Create playlist</button>
                     </div>
                     <div class="cp-card">
                         <h4>Let's find some podcasts to follow</h4>
                         <p>We'll keep you updated on new episodes</p>
-                        <button class="small-btn">Browse podcasts</button>
+                        <button class="small-btn" type="button">Browse podcasts</button>
                     </div>
                 </div>
+
+                <ul class="library-list">
+                    <li><button type="button" class="library-item">
+                            <span class="library-item-ico liked"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+                            <span class="library-item-name">Liked Songs</span>
+                            <span class="library-item-count">128</span>
+                        </button></li>
+                    <li><button type="button" class="library-item">
+                            <span class="library-item-name">Recently Played</span>
+                            </button></li>
+                    <li><button type="button" class="library-item">
+                            <span class="library-item-name">Top Songs &amp; Albums</span>
+                            </button></li>
+                    <li><button type="button" class="library-item">
+                            <span class="library-item-name">Discover Weekly</span>
+                            </button></li>
+                    <li><button type="button" class="library-item">
+                            <span class="library-item-name">Chill Mix</span>
+                            </button></li>
+                </ul>
 
                 <div class="sidebar-footer">
                     <div class="legal-links">
                         <a href="#">Legal</a>
-                        <a href="#">Safety & Privacy Center</a>
+                        <a href="#">Safety &amp; Privacy Center</a>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Cookies</a>
                         <a href="#">About Ads</a>
                         <a href="#">Accessibility</a>
                     </div>
-                    <button class="lang-btn">
-                        <i class="fa-solid fa-globe"></i>
+                    <button class="lang-btn" type="button">
+                        <i class="fa-solid fa-globe" aria-hidden="true"></i>
                         <span>English</span>
                     </button>
                 </div>
             </div>
         </nav>
 
-        <main class="main-content">
+        <main class="main-content" id="main-content">
             <header class="top-nav">
                 <div class="nav-controls">
-                    <button class="circle-btn">
+                    <button class="circle-btn" type="button" aria-label="Go back" disabled>
                         <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
                             fill="currentColor">
                             <path
@@ -64,7 +97,7 @@
                             </path>
                         </svg>
                     </button>
-                    <button class="circle-btn">
+                    <button class="circle-btn" type="button" aria-label="Go forward" disabled>
                         <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
                             fill="currentColor">
                             <path
@@ -82,123 +115,214 @@
                                 d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
                             </path>
                         </svg>
-                        <input type="text" placeholder="What do you want to play?">
-                        <svg role="img" height="24" width="24" aria-hidden="true" class="browse-icon"
-                            viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M3 5.418C3 4.086 4.086 3 5.418 3h4.929c.666 0 1.27.34 1.62.91l.732 1.168h5.883C19.914 5.078 21 6.164 21 7.496v9.086C21 17.914 19.914 19 18.582 19H5.418C4.086 19 3 17.914 3 16.582V5.418zm2.418-1.049a.418.418 0 0 0-.418.418v11.795a.418.418 0 0 0 .418.418h13.164a.418.418 0 0 0 .418-.418V7.496a.418.418 0 0 0-.418-.418h-6.25l-.946-1.503a.415.415 0 0 0-.353-.204H5.418z">
-                            </path>
-                        </svg>
+                        <input type="search" name="q" placeholder="What do you want to play?"
+                            aria-label="Search for songs, artists, podcasts and albums">
+                        <button class="browse-icon" type="button" aria-label="Browse">
+                            <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M3 5.418C3 4.086 4.086 3 5.418 3h4.929c.666 0 1.27.34 1.62.91l.732 1.168h5.883C19.914 5.078 21 6.164 21 7.496v9.086C21 17.914 19.914 19 18.582 19H5.418C4.086 19 3 17.914 3 16.582V5.418zm2.418-1.049a.418.418 0 0 0-.418.418v11.795a.418.418 0 0 0 .418.418h13.164a.418.418 0 0 0 .418-.418V7.496a.418.418 0 0 0-.418-.418h-6.25l-.946-1.503a.415.415 0 0 0-.353-.204H5.418z">
+                                </path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
                 <div class="auth-buttons">
-                    <span class="premium-link">Premium</span>
-                    <span class="support-link">Support</span>
-                    <span class="download-link">Download</span>
-                    <div class="divider"></div>
-                    <button class="install-app"><i class="fa-regular fa-circle-down"></i> Install App</button>
-                    <button class="signup-btn">Sign up</button>
-                    <button class="login-btn">Log in</button>
+                    <a class="premium-link" href="#">Premium</a>
+                    <a class="support-link" href="#">Support</a>
+                    <a class="download-link" href="#">Download</a>
+                    <div class="divider" role="presentation"></div>
+                    <a class="install-app" href="#">
+                        <i class="fa-regular fa-circle-down" aria-hidden="true"></i>
+                        <span>Install App</span>
+                    </a>
+                    <button class="signup-btn" type="button">Sign up</button>
+                    <button class="login-btn" type="button">Log in</button>
+                    <button class="avatar-btn" type="button" aria-label="Open user menu">
+                        <img src="images/user-avatar.jpeg" alt="Your profile">
+                    </button>
                 </div>
             </header>
 
-            <div class="content-scroll">
-                <section class="content-section">
+            <div class="content-scroll" id="content-scroll" tabindex="0" role="region" aria-label="Browse music">
+                <h1 class="greeting">Good afternoon, boing</h1>
+
+                <section class="content-section" aria-labelledby="trending-heading">
                     <div class="section-header">
-                        <h2>Trending songs</h2>
+                        <h2 id="trending-heading">Trending songs</h2>
                         <a href="#" class="show-all">Show all</a>
                     </div>
                     <div class="cards-container">
-                        <div class="card">
+                        <article class="card">
                             <div class="img-holder">
-                                <img src="images/album1.jpeg" alt="Song">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/album1.jpeg" alt="Gehra Hua cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Gehra Hua">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Gehra Hua</h3>
                             <p>Shashwat Sachdev, Arijit Singh, Irshad Kamil</p>
-                        </div>
-                        <div class="card">
+                        </article>
+                        <article class="card">
                             <div class="img-holder">
-                                <img src="images/album2.jpeg" alt="Song">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/album2.jpeg" alt="Seet Lehar cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Seet Lehar">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Seet Lehar</h3>
                             <p>Filmy, Riyaazi</p>
-                        </div>
-                        <div class="card">
+                        </article>
+                        <article class="card">
                             <div class="img-holder">
-                                <img src="images/album3.jpeg" alt="Song">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/album3.jpeg" alt="KALYANI cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play KALYANI">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>KALYANI</h3>
                             <p>ARIN, KDS, FIFTY4, RONN</p>
-                        </div>
-                        <div class="card">
+                        </article>
+                        <article class="card">
                             <div class="img-holder">
-                                <img src="images/album4.jpeg" alt="Song">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/album4.jpeg" alt="Hopeless cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Hopeless">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Hopeless</h3>
                             <p>Amanraj Gill, Prem Lata</p>
-                        </div>
-                        <div class="card">
+                        </article>
+                        <article class="card">
                             <div class="img-holder">
-                                <img src="images/album5.jpeg" alt="Song">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/album5.jpeg" alt="Oorum Blood cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Oorum Blood">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Oorum Blood</h3>
                             <p>Sai Abhyankkar, Paal Dabba</p>
-                        </div>
+                        </article>
                     </div>
                 </section>
 
-                <section class="content-section">
+                <section class="content-section" aria-labelledby="artists-heading">
                     <div class="section-header">
-                        <h2>Popular artists</h2>
+                        <h2 id="artists-heading">Popular artists</h2>
                         <a href="#" class="show-all">Show all</a>
                     </div>
                     <div class="cards-container">
-                        <div class="card artist-card">
+                        <article class="card artist-card">
                             <div class="img-holder">
-                                <img src="images/artist-2.jpeg" alt="Artist">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/artist-2.jpeg" alt="Pritam" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Pritam">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Pritam</h3>
                             <p>Artist</p>
-                        </div>
-                        <div class="card artist-card">
+                        </article>
+                        <article class="card artist-card">
                             <div class="img-holder">
-                                <img src="images/artist-1.jpeg" alt="Artist">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/artist-1.jpeg" alt="A.R. Rahman" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play A.R. Rahman">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>A.R. Rahman</h3>
                             <p>Artist</p>
-                        </div>
-                        <div class="card artist-card">
+                        </article>
+                        <article class="card artist-card">
                             <div class="img-holder">
-                                <img src="images/artist-3.jpeg" alt="Artist">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/artist-3.jpeg" alt="Arijit Singh" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Arijit Singh">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Arijit Singh</h3>
                             <p>Artist</p>
-                        </div>
-                        <div class="card artist-card">
+                        </article>
+                        <article class="card artist-card">
                             <div class="img-holder">
-                                <img src="images/artist-4.jpeg" alt="Artist">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/artist-4.jpeg" alt="Sachin-Jigar" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Sachin-Jigar">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Sachin-Jigar</h3>
                             <p>Artist</p>
-                        </div>
-                        <div class="card artist-card">
+                        </article>
+                        <article class="card artist-card">
                             <div class="img-holder">
-                                <img src="images/artist-5.jpeg" alt="Artist">
-                                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                                <img src="images/artist-5.jpeg" alt="Ed Sheeran" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Ed Sheeran">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                             <h3>Ed Sheeran</h3>
                             <p>Artist</p>
-                        </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="content-section" aria-labelledby="foryou-heading">
+                    <div class="section-header">
+                        <h2 id="foryou-heading">Made for you</h2>
+                        <a href="#" class="show-all">Show all</a>
+                    </div>
+                    <div class="cards-container">
+                        <article class="card">
+                            <div class="img-holder">
+                                <img src="images/daily-mix-1.jpeg" alt="Daily Mix 1 cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Daily Mix 1">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <h3>Daily Mix 1</h3>
+                            <p>Pritam, Arijit Singh, Sachin-Jigar and more</p>
+                        </article>
+                        <article class="card">
+                            <div class="img-holder">
+                                <img src="images/daily-mix-2.jpeg" alt="Daily Mix 2 cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Daily Mix 2">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <h3>Daily Mix 2</h3>
+                            <p>A.R. Rahman, Filmy, Riyaazi and more</p>
+                        </article>
+                        <article class="card">
+                            <div class="img-holder">
+                                <img src="images/daily-mix-3.jpeg" alt="Daily Mix 3 cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Daily Mix 3">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <h3>Daily Mix 3</h3>
+                            <p>Ed Sheeran, Amanraj Gill, Prem Lata and more</p>
+                        </article>
+                        <article class="card">
+                            <div class="img-holder">
+                                <img src="images/daily-mix-4.jpeg" alt="Daily Mix 4 cover art" loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Daily Mix 4">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <h3>Daily Mix 4</h3>
+                            <p>Sai Abhyankkar, Paal Dabba, ARIN and more</p>
+                        </article>
+                        <article class="card">
+                            <div class="img-holder">
+                                <img src="images/liked-songs-icon.jpeg" alt="Liked Songs cover art"
+                                    loading="lazy">
+                                <button class="play-btn" type="button" aria-label="Play Liked Songs">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <h3>Liked Songs</h3>
+                            <p>128 songs</p>
+                        </article>
                     </div>
                 </section>
 
@@ -210,13 +334,105 @@
                             <a href="#">Jobs</a>
                             <a href="#">For the Record</a>
                         </div>
+                        <div class="fl-col">
+                            <h4>Communities</h4>
+                            <a href="#">For Artists</a>
+                            <a href="#">Developers</a>
+                            <a href="#">Advertising</a>
+                            <a href="#">Investors</a>
+                        </div>
+                        <div class="fl-col">
+                            <h4>Useful links</h4>
+                            <a href="#">Support</a>
+                            <a href="#">Free Mobile App</a>
+                        </div>
+                        <div class="fl-col">
+                            <h4>Spotify Plans</h4>
+                            <a href="#">Premium Individual</a>
+                            <a href="#">Premium Duo</a>
+                            <a href="#">Premium Family</a>
+                            <a href="#">Spotify Free</a>
+                        </div>
                     </div>
                     <div class="social-icons">
-                        <div class="icon-circle"><i class="fa-brands fa-instagram"></i></div>
-                        <div class="icon-circle"><i class="fa-brands fa-twitter"></i></div>
-                        <div class="icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
+                        <a class="icon-circle" href="#" aria-label="Spotify on Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a class="icon-circle" href="#" aria-label="Spotify on X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="icon-circle" href="#" aria-label="Spotify on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </footer>
+            </div>
+
+            <div class="now-playing" role="region" aria-label="Now playing">
+                <div class="np-track">
+                    <img src="images/now-playing.jpeg" alt="Gehra Hua cover art">
+                    <div class="np-meta">
+                        <a href="#" class="np-title">Gehra Hua</a>
+                        <a href="#" class="np-artist">Shashwat Sachdev, Arijit Singh, Irshad Kamil</a>
+                    </div>
+                    <button class="icon-btn np-like" type="button" aria-label="Add to Liked Songs">
+                        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="np-center">
+                    <div class="np-controls">
+                        <button class="icon-btn" type="button" aria-label="Shuffle">
+                            <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+                        </button>
+                        <button class="icon-btn" type="button" aria-label="Previous track">
+                            <i class="fa-solid fa-step-backward" aria-hidden="true"></i>
+                        </button>
+                        <button class="np-play" type="button" aria-label="Play">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        </button>
+                        <button class="icon-btn" type="button" aria-label="Next track">
+                            <i class="fa-solid fa-step-forward" aria-hidden="true"></i>
+                        </button>
+                        <button class="icon-btn" type="button" aria-label="Repeat">
+                            <i class="fa-solid fa-repeat" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="np-progress">
+                        <span class="np-time">1:47</span>
+                        <div class="np-track-bar" role="slider" tabindex="0" aria-label="Seek"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="28" aria-valuetext="1:47 of 3:32">
+                            <div class="np-track-bar-inner" role="presentation">
+                                <div class="np-track-bar-played" role="presentation"></div>
+                            </div>
+                        </div>
+                        <span class="np-time">3:32</span>
+                    </div>
+                </div>
+
+                <div class="np-extras">
+                    <button class="icon-btn" type="button" aria-label="Lyrics">
+                        <i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>
+                    </button>
+                    <button class="icon-btn" type="button" aria-label="Queue">
+                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                    </button>
+                    <button class="icon-btn" type="button" aria-label="Connect to a device">
+                        <i class="fa-solid fa-spotify" aria-hidden="true"></i>
+                    </button>
+                    <div class="np-volume" role="slider" tabindex="0" aria-label="Volume" aria-valuemin="0"
+                        aria-valuemax="100" aria-valuenow="70" aria-valuetext="70%">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        <div class="np-track-bar">
+                            <div class="np-track-bar-inner">
+                                <div class="np-track-bar-played"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="np-expand" type="button" aria-label="Open full screen">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </main>
     </div>
@@ -226,7 +442,7 @@
             <p class="preview-subtitle">Sign up to get unlimited songs and podcasts with occasional ads. No credit card
                 needed.</p>
         </div>
-        <button class="banner-btn">Sign up free</button>
+        <button class="banner-btn" type="button">Sign up free</button>
     </div>
 </body>
 
